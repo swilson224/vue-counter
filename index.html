@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>simple-counter</title>
+    <script src="vue.js"></script>
 </head>
 <body>
-
+    <div id="app">
+        <button v-on:click="increase">Click Me</button>
+        <p>{{ counter }}</p>
+    </div>
 </body>
 
 <script>
-
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        },
+        methods: {
+            increase: function() {
+                this.counter++;
+            }
+        }
+    });
 </script>
 </html>
